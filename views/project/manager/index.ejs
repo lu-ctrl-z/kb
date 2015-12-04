@@ -1,0 +1,29 @@
+<br />
+<br />
+<br />
+<form class="via-form-search login add" method="POST" action="/project/addmember/">
+<input type="hidden" name="project_id" value="<%=res.locals.project['id']%>" />
+    <fieldset>
+        <legend><%=res.locals.project['project_name']%></legend>
+        <table class="border" style="white-space: nowrap;">
+            <tr><th>user name</th><th>email</th><th>join date</th><th>action</th></tr>
+        <% if(res.locals.listProject && res.locals.listProject.length) { %>
+            <% for(var i = 0 ; i < res.locals.listProject.length; i++) {%>
+            <tr><td style="width: 15%;"><%=res.locals.listProject[i]['user_id']['user_name']%></td>
+                <td><%=res.locals.listProject[i]['user_id']['email']%></td>
+                <td><%=res.locals.listProject[i]['user_id']['createdAt']%></td>
+                <td style="width: 25%;"><a href="/project/manager/?project_id=<%=res.locals.listProject[i]['id']%>">delete</a></td>
+            </tr>
+            <% } %>
+        <% } %>
+            <tr><td style="width: 15%;"><input type="text" name="user_name" placeholder="user name"></td>
+                <td><input type="text" name="email" placeholder="Email"></td>
+                <td style="width: 25%;"></td>
+                <td style="width: 25%;"><button type="submit" name="add">Add</button></td>
+            </tr>
+            <tr id="search-result" style="display: none;">
+                
+            </tr>
+        </table>
+    </fieldset>
+</form>

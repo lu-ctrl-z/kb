@@ -1,0 +1,265 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="vi" lang="vi" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Scrum Master</title>
+<link rel="stylesheet" type="text/css" href="css/scrum-master.css" media="all">
+<link rel="stylesheet" type="text/css" href="css/scrum.role.css" media="all">
+<link href="css/font/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+<link href="css/jquery.ui.timepicker.css" rel="stylesheet" type="text/css">
+</head>
+<body class="crum-master-bg">
+    <div id="header">
+        <div class="table">
+            <div class="table-cell">
+                <a href="/template"><img src="image/kanban.png" alt="kanban"></a>
+            </div>
+            <div class="table-cell">
+                <select name="project_id">
+                    <option>list project</option>
+                    <option value="1">pro-cy</option>
+                    <option value="2">pro-yk</option>
+                    <option value="3">pro-csu</option>
+                </select>
+            </div>
+            <div class="table-cell">
+                <a href="#" ><i class="fa fa-plus-square"></i>&nbsp; add task</a>
+            </div>
+            <div class="table-cell">
+                <a href="#" class="trash" ><strong><i class="fa fa-trash-o"></i></strong></a>
+            </div>
+            <div class="table-cell free-cell"></div>
+            <div class="table-cell">
+                <select name="project_id">
+                    <option value="5">Sprint 5</option>
+                    <option value="4">Sprint 4</option>
+                    <option value="3">Sprint 3</option>
+                    <option value="2">Sprint 2</option>
+                    <option value="1">Sprint 1</option>
+                </select>
+            </div>
+            <div class="table-cell no-border">
+                <span>Date start : 2015/03/23</span><br>
+                <span>Date end &nbsp;: 2015/03/27</span>
+            </div>
+            <div class="table-cell">
+                <a href="#" ><i class="fa fa-plus-square"></i>&nbsp; new sprint</a>
+            </div>
+            <div class="table-cell">
+                <a href="#" ><i class="fa fa-cog"></i>&nbsp; Config dự án</a>
+            </div>
+        </div>
+        <div class="butterbar clearfix">
+            <a class="close"><i class="fa fa-times-circle"></i></a>
+        </div>
+    </div>
+    <div class="wrapper">
+        <h1 class="project-title">Pro-CY</h1>
+        <table class="scrum">
+            <tr class="head">
+                <th class="to-upper">to do</th>
+                <th class="to-upper">Doing</th>
+                <th class="to-upper">Chờ review</th>
+                <th class="to-upper">review</th>
+                <th class="to-upper">Done</th>
+                <th class="to-upper">Tắc tị</th>
+            </tr>
+            <tr class="l">
+                <td class="task task-to-do" id="task-to-do-hunggk">
+                    <div class="task-item t green" id="1">
+                        <a class="id-ticket t">#89</a>
+                        <p class="task-name t">Code</p>
+                        <p class="member-name t"><b>HùngGK</b></p>
+                        <p class="start-time">2015/03/16 2:00 PM</p>
+                        <ul class="tool clearfix">
+                            <li class="change-status">
+                                <blockquote role="cmd-toggle" class="box t" data-title="đổi trạng thái task"><i class="fa fa-list"></i></blockquote>
+                                <ul tabindex="2" class="popup">
+                                    <li class="t" role="cmd-sendto-to-do"><i class="fa fa-list"></i>&nbsp;to do</li>
+                                    <li class="t" role="cmd-sendto-doing"><i class="fa fa-smile-o"></i>&nbsp;doing</li>
+                                    <li class="t" role="cmd-sendto-review-waiting"><i class="fa fa-clock-o"></i>&nbsp;chờ review</li>
+                                    <li class="t" role="cmd-sendto-review"><i class="fa fa-cogs"></i>&nbsp;review</li>
+                                    <li class="t" role="cmd-sendto-done"><i class="fa fa-check-square-o"></i>&nbsp;done</li>
+                                    <li class="t" role="cmd-sendto-suppend"><i class="fa fa-frown-o"></i>&nbsp;tắc tị</li>
+                                </ul>
+                            </li>
+                            <li class="t box" role="cmd-sleep" data-title="collapse"><i class="fa fa-caret-square-o-up"></i></li>
+                            <li class="t box" role="cmd-edit" data-title="edit task"><i class="fa fa-pencil-square-o"></i></li>
+                            <li class="t box" role="cmd-remove" data-title="delete task"><i class="fa fa-trash-o"></i></li>
+                        </ul>
+                    </div>
+                    <div class="task-item t orange" id="2">
+                        <a class="id-ticket t">#89</a>
+                        <p class="task-name t">Code</p>
+                        <p class="member-name t"><b>HùngGK</b></p>
+                        <p class="start-time">2015/03/16 2:00 PM</p>
+                        <ul class="tool clearfix">
+                            <li class="change-status">
+                                <blockquote role="cmd-toggle" class="box t" data-title="đổi trạng thái task"><i class="fa fa-list"></i></blockquote>
+                                <ul tabindex="2" class="popup">
+                                    <li class="t" role="cmd-sendto-to-do"><i class="fa fa-list"></i>&nbsp;to do</li>
+                                    <li class="t" role="cmd-sendto-doing"><i class="fa fa-smile-o"></i>&nbsp;doing</li>
+                                    <li class="t" role="cmd-sendto-review-waiting"><i class="fa fa-clock-o"></i>&nbsp;chờ review</li>
+                                    <li class="t" role="cmd-sendto-review"><i class="fa fa-cogs"></i>&nbsp;review</li>
+                                    <li class="t" role="cmd-sendto-done"><i class="fa fa-check-square-o"></i>&nbsp;done</li>
+                                    <li class="t" role="cmd-sendto-suppend"><i class="fa fa-frown-o"></i>&nbsp;tắc tị</li>
+                                </ul>
+                            </li>
+                            <li class="t box" role="cmd-sleep" data-title="collapse"><i class="fa fa-caret-square-o-up"></i></li>
+                            <li class="t box" role="cmd-edit" data-title="edit task"><i class="fa fa-pencil-square-o"></i></li>
+                            <li class="t box" role="cmd-remove" data-title="delete task"><i class="fa fa-trash-o"></i></li>
+                        </ul>
+                    </div>
+                    <div class="task-item t red" id="3">
+                        <a class="id-ticket t">#89</a>
+                        <p class="task-name t">Code</p>
+                        <p class="member-name t"><b>HùngGK</b></p>
+                        <p class="start-time">2015/03/16 2:00 PM</p>
+                        <ul class="tool clearfix">
+                            <li class="change-status">
+                                <blockquote role="cmd-toggle" class="box t" data-title="đổi trạng thái task"><i class="fa fa-list"></i></blockquote>
+                                <ul tabindex="2" class="popup">
+                                    <li class="t" role="cmd-sendto-to-do"><i class="fa fa-list"></i>&nbsp;to do</li>
+                                    <li class="t" role="cmd-sendto-doing"><i class="fa fa-smile-o"></i>&nbsp;doing</li>
+                                    <li class="t" role="cmd-sendto-review-waiting"><i class="fa fa-clock-o"></i>&nbsp;chờ review</li>
+                                    <li class="t" role="cmd-sendto-review"><i class="fa fa-cogs"></i>&nbsp;review</li>
+                                    <li class="t" role="cmd-sendto-done"><i class="fa fa-check-square-o"></i>&nbsp;done</li>
+                                    <li class="t" role="cmd-sendto-suppend"><i class="fa fa-frown-o"></i>&nbsp;tắc tị</li>
+                                </ul>
+                            </li>
+                            <li class="t box" role="cmd-sleep" data-title="collapse"><i class="fa fa-caret-square-o-up"></i></li>
+                            <li class="t box" role="cmd-edit" data-title="edit task"><i class="fa fa-pencil-square-o"></i></li>
+                            <li class="t box" role="cmd-remove" data-title="delete task"><i class="fa fa-trash-o"></i></li>
+                        </ul>
+                    </div>
+                    <div class="task-item t green" id="4">
+                        <a class="id-ticket t">#89</a>
+                        <p class="task-name t">Code</p>
+                        <p class="member-name t"><b>HùngGK</b></p>
+                        <p class="start-time">2015/03/16 2:00 PM</p>
+                        <ul class="tool clearfix">
+                            <li class="change-status">
+                                <blockquote role="cmd-toggle" class="box t" data-title="đổi trạng thái task"><i class="fa fa-list"></i></blockquote>
+                                <ul tabindex="2" class="popup">
+                                    <li class="t" role="cmd-sendto-to-do"><i class="fa fa-list"></i>&nbsp;to do</li>
+                                    <li class="t" role="cmd-sendto-doing"><i class="fa fa-smile-o"></i>&nbsp;doing</li>
+                                    <li class="t" role="cmd-sendto-review-waiting"><i class="fa fa-clock-o"></i>&nbsp;chờ review</li>
+                                    <li class="t" role="cmd-sendto-review"><i class="fa fa-cogs"></i>&nbsp;review</li>
+                                    <li class="t" role="cmd-sendto-done"><i class="fa fa-check-square-o"></i>&nbsp;done</li>
+                                    <li class="t" role="cmd-sendto-suppend"><i class="fa fa-frown-o"></i>&nbsp;tắc tị</li>
+                                </ul>
+                            </li>
+                            <li class="t box" role="cmd-sleep" data-title="collapse"><i class="fa fa-caret-square-o-up"></i></li>
+                            <li class="t box" role="cmd-edit" data-title="edit task"><i class="fa fa-pencil-square-o"></i></li>
+                            <li class="t box" role="cmd-remove" data-title="delete task"><i class="fa fa-trash-o"></i></li>
+                        </ul>
+                    </div>
+                </td>
+                <td class="task task-doing" id="task-doing-hunggk">
+                </td>
+                <td class="task task-review-waiting" id="task-review-waiting-hunggk">
+                </td>
+                <td class="task task-review" id="task-review-hunggk">
+                </td>
+                <td class="task task-done" id="task-done-hunggk">
+                </td>
+                <td class="task task-suppend" id="task-suppend-hunggk">
+                </td>
+                <td class="author">HungGK2</td>
+            </tr>
+            <tr class="l">
+                <td class="task task-to-do" id="task-to-do-myntd">
+                    <div class="task-item t orange" id="5">
+                        <a class="id-ticket t">#89</a>
+                        <p class="task-name t">Code</p>
+                        <p class="member-name t"><b>HùngGK</b></p>
+                        <p class="start-time">2015/03/16 2:00 PM</p>
+                        <ul class="tool clearfix">
+                            <li class="change-status">
+                                <blockquote role="cmd-toggle" class="box t" data-title="đổi trạng thái task"><i class="fa fa-list"></i></blockquote>
+                                <ul tabindex="2" class="popup">
+                                    <li class="t" role="cmd-sendto-to-do"><i class="fa fa-list"></i>&nbsp;to do</li>
+                                    <li class="t" role="cmd-sendto-doing"><i class="fa fa-smile-o"></i>&nbsp;doing</li>
+                                    <li class="t" role="cmd-sendto-review-waiting"><i class="fa fa-clock-o"></i>&nbsp;chờ review</li>
+                                    <li class="t" role="cmd-sendto-review"><i class="fa fa-cogs"></i>&nbsp;review</li>
+                                    <li class="t" role="cmd-sendto-done"><i class="fa fa-check-square-o"></i>&nbsp;done</li>
+                                    <li class="t" role="cmd-sendto-suppend"><i class="fa fa-frown-o"></i>&nbsp;tắc tị</li>
+                                </ul>
+                            </li>
+                            <li class="t box" role="cmd-sleep" data-title="collapse"><i class="fa fa-caret-square-o-up"></i></li>
+                            <li class="t box" role="cmd-edit" data-title="edit task"><i class="fa fa-pencil-square-o"></i></li>
+                            <li class="t box" role="cmd-remove" data-title="delete task"><i class="fa fa-trash-o"></i></li>
+                        </ul>
+                    </div>
+                    <div class="task-item t red" id="6">
+                        <a class="id-ticket t">#89</a>
+                        <p class="task-name t">Code</p>
+                        <p class="member-name t"><b>HùngGK</b></p>
+                        <p class="start-time">2015/03/16 2:00 PM</p>
+                        <ul class="tool clearfix">
+                            <li class="change-status">
+                                <blockquote role="cmd-toggle" class="box t" data-title="đổi trạng thái task"><i class="fa fa-list"></i></blockquote>
+                                <ul tabindex="2" class="popup">
+                                    <li class="t" role="cmd-sendto-to-do"><i class="fa fa-list"></i>&nbsp;to do</li>
+                                    <li class="t" role="cmd-sendto-doing"><i class="fa fa-smile-o"></i>&nbsp;doing</li>
+                                    <li class="t" role="cmd-sendto-review-waiting"><i class="fa fa-clock-o"></i>&nbsp;chờ review</li>
+                                    <li class="t" role="cmd-sendto-review"><i class="fa fa-cogs"></i>&nbsp;review</li>
+                                    <li class="t" role="cmd-sendto-done"><i class="fa fa-check-square-o"></i>&nbsp;done</li>
+                                    <li class="t" role="cmd-sendto-suppend"><i class="fa fa-frown-o"></i>&nbsp;tắc tị</li>
+                                </ul>
+                            </li>
+                            <li class="t box" role="cmd-sleep" data-title="collapse"><i class="fa fa-caret-square-o-up"></i></li>
+                            <li class="t box" role="cmd-edit" data-title="edit task"><i class="fa fa-pencil-square-o"></i></li>
+                            <li class="t box" role="cmd-remove" data-title="delete task"><i class="fa fa-trash-o"></i></li>
+                        </ul>
+                    </div>
+                    <div class="task-item t green" id="7">
+                        <a class="id-ticket t">#89</a>
+                        <p class="task-name t">Code</p>
+                        <p class="member-name t"><b>HùngGK</b></p>
+                        <p class="start-time">2015/03/16 2:00 PM</p>
+                        <ul class="tool clearfix">
+                            <li class="change-status">
+                                <blockquote role="cmd-toggle" class="box t" data-title="đổi trạng thái task"><i class="fa fa-list"></i></blockquote>
+                                <ul tabindex="2" class="popup">
+                                    <li class="t" role="cmd-sendto-to-do"><i class="fa fa-list"></i>&nbsp;to do</li>
+                                    <li class="t" role="cmd-sendto-doing"><i class="fa fa-smile-o"></i>&nbsp;doing</li>
+                                    <li class="t" role="cmd-sendto-review-waiting"><i class="fa fa-clock-o"></i>&nbsp;chờ review</li>
+                                    <li class="t" role="cmd-sendto-review"><i class="fa fa-cogs"></i>&nbsp;review</li>
+                                    <li class="t" role="cmd-sendto-done"><i class="fa fa-check-square-o"></i>&nbsp;done</li>
+                                    <li class="t" role="cmd-sendto-suppend"><i class="fa fa-frown-o"></i>&nbsp;tắc tị</li>
+                                </ul>
+                            </li>
+                            <li class="t box" role="cmd-sleep" data-title="collapse"><i class="fa fa-caret-square-o-up"></i></li>
+                            <li class="t box" role="cmd-edit" data-title="edit task"><i class="fa fa-pencil-square-o"></i></li>
+                            <li class="t box" role="cmd-remove" data-title="delete task"><i class="fa fa-trash-o"></i></li>
+                        </ul>
+                    </div>
+                </td>
+                <td class="task task-doing" id="task-doing-myntd">
+                </td>
+                <td class="task task-review-waiting" id="task-review-waiting-myntd">
+                </td>
+                <td class="task task-review" id="task-review-myntd">
+                </td>
+                <td class="task task-done" id="task-done-myntd">
+                </td>
+                <td class="task task-suppend" id="task-suppend-myntd">
+                </td>
+                <td class="author">MyNTD</td>
+            </tr>
+        </table>
+    </div>
+    <overlay></overlay>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/scrum-master.js"></script>
+<script src="js/socket.io.js"></script>
+<script src="js/node-client.js"></script>
+<script src="js/configs.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/jquery.ui.timepicker.js"></script>
+</html>

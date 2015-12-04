@@ -1,0 +1,31 @@
+<br />
+<br />
+<br />
+<br />
+<form class="login add" method="POST" action="/project/add/">
+    <fieldset>
+        <legend>New Project</legend>
+        <table>
+            <tr><th>Project name :</th><td><input type="text" name="project_name" tabindex="1"></tr>
+            <tr><th></th><td><button tabindex="3">Add</button></td></tr>
+        </table>
+    </fieldset>
+    <br />
+    <br />
+    <br />
+    <br />
+    <% if(res.locals.listProject && res.locals.listProject.length) { %>
+    <fieldset>
+        <legend>List Project</legend>
+        <table class="border">
+            <tr><th>ID</th><th colspan="2">Project name</th></tr>
+            <% for(var i = 0 ; i < res.locals.listProject.length; i++) {%>
+            <tr><td style="width: 15%;"><%=res.locals.listProject[i]['id']%></td>
+                <td><%=res.locals.listProject[i]['project_name']%></td>
+                <td style="width: 25%;"><a href="/project/manager/?project_id=<%=res.locals.listProject[i]['id']%>">manager</a></td>
+            </tr>
+            <% } %>
+        </table>
+    </fieldset>
+    <% } %>
+</form>

@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="vi" lang="vi" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Scrum Master</title>
+<link rel="stylesheet" type="text/css" href="css/scrum-master.css" media="all">
+<link rel="stylesheet" type="text/css" href="css/scrum.role.css" media="all">
+<link href="css/font/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+</head>
+<body class="crum-master-bg">
+    <div id="header">
+        <div class="table">
+            <div class="table-cell">
+                <a href="/template"><img src="image/kanban.png" alt="kanban"></a>
+            </div>
+            <div class="table-cell free-cell"></div>
+        </div>
+        <div class="butterbar clearfix">
+            <a class="close"><i class="fa fa-times-circle"></i></a>
+        </div>
+    </div>
+    <div class="wrapper">
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <form class="login" method="POST" action="/login/">
+            <fieldset>
+                <legend>Login</legend>
+                <table>
+                    <tr><th>User name :</th><td><input type="text" name="user_name" tabindex="1"></td></tr>
+                    <tr><th>Password :</th><td><input type="password" name="password" tabindex="2"></td></tr>
+                    <tr><th></th><td><button tabindex="3">Login</button></td></tr>
+                </table>
+            </fieldset>
+        </form>
+    </div>
+    <overlay></overlay>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/scrum-master.js"></script>
+<script src="js/socket.io.js"></script>
+<script src="js/node-client.js"></script>
+<script src="js/configs.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+</html>

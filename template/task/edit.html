@@ -1,0 +1,41 @@
+<form class="popup-box" action="/task/" method="post">
+    <input type="hidden" name="task_edit">
+    <input type="hidden" name="task_id" value="1">
+    <div class="task-form green">
+        <input type="text" name="ticket_id" class="ticket_id" placeholder="#ticket"  tabindex="1" >
+        <span class="type">
+            <label class="green box" >
+                <input type="radio" tabindex="2" name="type" value="1" />
+            </label>
+            <label class="orange box"  >
+                <input type="radio" tabindex="3" name="type" value="2" />
+            </label>
+            <label class="red box" >
+               <input type="radio" tabindex="4" name="type" value="3" />
+            </label>
+        </span>
+        <input type="text" name="task_name" class="task_name" placeholder="tên task"  tabindex="5">
+        <br />
+        <br />
+        <label>Giờ bắt đầu :&nbsp;
+            <input type="text" class="start_date datepicker" name="start_date" tabindex="6">
+            <input type="text" class="start_time timepicker" name="start_time" tabindex="7">
+        </label>
+        <br />
+        <br />
+        <label>Giờ kết thúc :
+            <input type="text" class="end_time datepicker" name="end_time" tabindex="8">
+        </label>
+        <br />
+        <br />
+        <button >Addddd</button>
+    </div>
+    <script type="text/javascript">
+       $(function() {
+           $('.timepicker').timepicker({
+               showPeriodLabels: false,
+            });
+           $('.datepicker').datepicker();
+       })
+    </script>
+</form>
